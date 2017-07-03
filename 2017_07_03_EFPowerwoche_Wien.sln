@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloDatenbank", "HalloDatenbank\HalloDatenbank.csproj", "{1D68F144-26EF-42AB-96AC-B44421873E77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloTransactions", "HalloTransactions\HalloTransactions.csproj", "{566F5153-E4BF-4351-AB68-7F7C98B539A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1D68F144-26EF-42AB-96AC-B44421873E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D68F144-26EF-42AB-96AC-B44421873E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D68F144-26EF-42AB-96AC-B44421873E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566F5153-E4BF-4351-AB68-7F7C98B539A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566F5153-E4BF-4351-AB68-7F7C98B539A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566F5153-E4BF-4351-AB68-7F7C98B539A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566F5153-E4BF-4351-AB68-7F7C98B539A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
