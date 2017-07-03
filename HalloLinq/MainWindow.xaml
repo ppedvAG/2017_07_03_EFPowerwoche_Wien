@@ -1,0 +1,91 @@
+﻿<Window x:Class="HalloLinq.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="4" />
+                </Style>
+            </WrapPanel.Resources>
+
+            <Button Content="All Employees" Click="AllEmployeesButton_Click" />
+            <Button Content="Restriction" Click="RestrictionButton_Click" />
+            <Button Content="Ordering" Click="OrderingButton_Click" />
+            <Button Content="Projection" Click="ProjectionButton_Click" />
+            <Button Content="Grouping" Click="GroupingButton_Click" />
+            <Button Content="Partitioning" Click="PartitioningButton_Click" />
+            <Button Content="Element Operators" Click="ElementOperatorsButton_Click" />
+            <Button Content="Quantifying" Click="QuanitfyingButton_Click" />
+            <Button Content="Aggregating" Click="AggregatingButton_Click" />
+            <Button Content="Inner Join" Click="InnerJoinButton_Click" />
+            <Button Content="Group Join" Click="GroupJoinButton_Click" />
+            <Button Content="Cross Join" Click="CrossJoinButton_Click" />
+        </WrapPanel>
+
+        <DataGrid Grid.Row="1" Name="myDataGrid" />
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Element Operators: " />
+            <TextBlock Grid.Column="1" Grid.Row="0" Name="elementOperatorsTextBlock" />
+
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Quantifying All: " />
+            <TextBlock Grid.Column="1" Grid.Row="2" Name="QuantifyingAllTextBlock" />
+            
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="Quantifying Any: " />
+            <TextBlock Grid.Column="1" Grid.Row="4" Name="QuantifyingAnyTextBlock" />
+
+            <TextBlock Grid.Column="0" Grid.Row="6" Text="Count: " />
+            <TextBlock Grid.Column="1" Grid.Row="6" Name="CountTextBlock" />
+
+            <TextBlock Grid.Column="0" Grid.Row="8" Text="Min: " />
+            <TextBlock Grid.Column="1" Grid.Row="8" Name="MinTextBlock" />
+
+            <TextBlock Grid.Column="0" Grid.Row="10" Text="Max: " />
+            <TextBlock Grid.Column="1" Grid.Row="10" Name="MaxTextBlock" />
+            
+            <TextBlock Grid.Column="0" Grid.Row="12" Text="Average: " />
+            <TextBlock Grid.Column="1" Grid.Row="12" Name="AverageTextBlock" />
+
+            <TextBlock Grid.Column="0" Grid.Row="14" Text="Sum: " />
+            <TextBlock Grid.Column="1" Grid.Row="14" Name="SumTextBlock" />
+        </Grid>
+    </Grid>
+</Window>
