@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HalloCodeFirst.Attributes;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,7 +15,9 @@ namespace HalloCodeFirst.Models
 
         [Required]
         [MaxLength(50)]
-        [Column(TypeName = "varchar")]
+        //[Column(TypeName = "varchar")]
+        //[NonUnicode]
+        [IsUnicode(false)]
         public string Name { get; set; }
 
         public string Beschreibung { get; set; }

@@ -49,9 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\IsUnicodeAttribute.cs" />
+    <Compile Include="Attributes\NonUnicodeAttribute.cs" />
     <Compile Include="BlutContext.cs" />
     <Compile Include="Configurations\BlutprobeConfiguration.cs" />
     <Compile Include="Configurations\UntersuchungConfiguration.cs" />
+    <Compile Include="Conventions\DateConvention.cs" />
+    <Compile Include="Conventions\IsUnicodeAttributeConvention.cs" />
+    <Compile Include="Conventions\NonUnicodeAttributeConvention.cs" />
     <Compile Include="Migrations\201707040925082_InitialMigration.cs" />
     <Compile Include="Migrations\201707040925082_InitialMigration.Designer.cs">
       <DependentUpon>201707040925082_InitialMigration.cs</DependentUpon>
