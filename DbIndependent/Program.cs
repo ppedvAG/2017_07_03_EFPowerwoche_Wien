@@ -38,7 +38,7 @@ namespace DbIndependent
                     //p.ParameterName = "@name";
                     //p.Value = "M";
                     //command.Parameters.Add(p);
-
+                   
                     command.AddParameterWithValue("@name", "M");
 
                     var result = command.ExecuteScalar();
