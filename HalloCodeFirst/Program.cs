@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using Tynamix.ObjectFiller;
 
@@ -11,10 +12,30 @@ namespace HalloCodeFirst
     {
         static void Main(string[] args)
         {
-            Joins();
+            StoredProcedure();
 
             Console.WriteLine("Console Fertig.");
             Console.ReadKey();
+        }
+
+        private static void StoredProcedure()
+        {
+            using (var context = new BlutContext())
+            {
+                var parameter = new SqlParameter("@year", 2016);
+                var result = context.Database.SqlQuery<GetUntersuchungenAfterResult>("GetUntersuchungenAfter @year", parameter).ToList();
+
+                foreach (var r in result)
+                {
+                    Console.WriteLine($"{r.Datum} - {r.Keim}");
+                }
+            }
+        }
+        private class GetUntersuchungenAfterResult
+        {
+            public DateTime Datum { get; set; }
+            public string Keim { get; set; }
+            public string Beschreibung { get; set; }
         }
 
         private static void Joins()
@@ -38,7 +59,6 @@ namespace HalloCodeFirst
                 }
             }
         }
-
         private static void ChangeTracker()
         {
             using (var context = new BlutContext())

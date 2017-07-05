@@ -41,6 +41,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0-preview2-25405-01\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,6 +99,10 @@
     <Compile Include="Migrations\201707050723362_SeedMaterialienTabelle.Designer.cs">
       <DependentUpon>201707050723362_SeedMaterialienTabelle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707051222316_AddStoredProcedure.cs" />
+    <Compile Include="Migrations\201707051222316_AddStoredProcedure.Designer.cs">
+      <DependentUpon>201707051222316_AddStoredProcedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Blutprobe.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707050723362_SeedMaterialienTabelle.resx">
       <DependentUpon>201707050723362_SeedMaterialienTabelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707051222316_AddStoredProcedure.resx">
+      <DependentUpon>201707051222316_AddStoredProcedure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
