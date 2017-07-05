@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloEntityDataModel", "Hal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloCodeFirst", "HalloCodeFirst\HalloCodeFirst.csproj", "{7048FEB2-01B0-42CB-BAA8-DDB069141F7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{5E8AE11F-32F6-48CA-BD40-74C113074F4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{7048FEB2-01B0-42CB-BAA8-DDB069141F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7048FEB2-01B0-42CB-BAA8-DDB069141F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7048FEB2-01B0-42CB-BAA8-DDB069141F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8AE11F-32F6-48CA-BD40-74C113074F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8AE11F-32F6-48CA-BD40-74C113074F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8AE11F-32F6-48CA-BD40-74C113074F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8AE11F-32F6-48CA-BD40-74C113074F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
