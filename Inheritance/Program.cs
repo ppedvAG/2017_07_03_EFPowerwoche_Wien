@@ -6,9 +6,22 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            TPH();
+            TPT();
         }
 
+        private static void TPT()
+        {
+            using (var context = new InheritanceContext())
+            {
+                var p = new PKW { Geschwindigkeit = 100, Sitzplaetzte = 5 };
+                var l = new LKW { Geschwindigkeit = 80, MaxLadung = 10000 };
+
+                context.Fahrzeuge.Add(p);
+                context.Fahrzeuge.Add(l);
+
+                context.SaveChanges();
+            }
+        }
         private static void TPH()
         {
             using (var context = new InheritanceContext())

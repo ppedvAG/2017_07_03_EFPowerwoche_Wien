@@ -14,11 +14,22 @@ namespace Inheritance
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
 
+        // TPT - Table per Type
+        public DbSet<Fahrzeug> Fahrzeuge { get; set; }
+        public DbSet<LKW> Lkws { get; set; }
+        public DbSet<PKW> Pkws { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // TPH
             modelBuilder.Entity<Person>()
                 .Map<Customer>(m => m.Requires("PersonType").HasValue("C"))
                 .Map<Employee>(m => m.Requires("PersonType").HasValue("E"));
+
+            // TPT
+            modelBuilder.Entity<Fahrzeug>().ToTable("Fahrzeuge");
+            modelBuilder.Entity<LKW>().ToTable("LKWs");
+            modelBuilder.Entity<PKW>().ToTable("PKWs");
         }
     }
 }
