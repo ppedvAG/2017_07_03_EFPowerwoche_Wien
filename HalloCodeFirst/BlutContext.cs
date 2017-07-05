@@ -9,9 +9,13 @@ namespace HalloCodeFirst
     public class BlutContext : DbContext
     {
         public BlutContext() : base("name=BlutConnectionString")
-        { }
+        {
+            Configuration.LazyLoadingEnabled = false;
+        }
         public BlutContext(string nameOrConnectionstring) : base(nameOrConnectionstring)
-        { }
+        {
+            Configuration.LazyLoadingEnabled = false;
+        }
 
         public DbSet<Blutprobe> Blutproben { get; set; }
         public DbSet<Material> Materialien { get; set; }
