@@ -11,10 +11,32 @@ namespace HalloCodeFirst
     {
         static void Main(string[] args)
         {
-            ChangeTracker();
+            Joins();
 
             Console.WriteLine("Console Fertig.");
             Console.ReadKey();
+        }
+
+        private static void Joins()
+        {
+            using (var context = new BlutContext())
+            {
+                var results = context.Blutproben.Join(
+                    context.Untersuchungen,
+                    p => p.Id,
+                    u => u.ProbeId,
+                    (p, u) => new { p.LFBIS, Probendatum = p.Datum, Untersuchugsdatum = u.Datum, u.Keim, UntersuchugnsId = u.Id })
+                    .Join(
+                    context.Materialien,
+                    u => u.UntersuchugnsId,
+                    m => m.Id,
+                    (w, m) => new { w.LFBIS, w.Probendatum, w.Untersuchugsdatum, w.Keim, w.UntersuchugnsId, Materialname = m.Name });
+
+                foreach (var e in results)
+                {
+                    Console.WriteLine($"{e.UntersuchugnsId} - {e.Materialname}");
+                }
+            }
         }
 
         private static void ChangeTracker()
@@ -48,7 +70,6 @@ namespace HalloCodeFirst
                     Console.WriteLine(entry.State);
             }
         }
-
         public static void PreLoading()
         {
             using (var context = new BlutContext())
