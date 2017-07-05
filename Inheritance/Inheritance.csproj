@@ -50,16 +50,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InheritanceContext.cs" />
+    <Compile Include="Migrations\201707051301330_TPH.cs" />
+    <Compile Include="Migrations\201707051301330_TPH.Designer.cs">
+      <DependentUpon>201707051301330_TPH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <EmbeddedResource Include="Migrations\201707051301330_TPH.resx">
+      <DependentUpon>201707051301330_TPH.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
