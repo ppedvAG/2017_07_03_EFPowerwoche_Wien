@@ -12,10 +12,20 @@ namespace HalloCodeFirst
     {
         static void Main(string[] args)
         {
-            StoredProcedure();
+            WurschtWurscht();
 
             Console.WriteLine("Console Fertig.");
             Console.ReadKey();
+        }
+
+        private static void WurschtWurscht()
+        {
+            using (var context = new BlutContext())
+            {
+                var proben = context.Blutproben.ToList();
+
+                proben.ForEach(p => Console.WriteLine(p.Wurscht));
+            }
         }
 
         private static void StoredProcedure()

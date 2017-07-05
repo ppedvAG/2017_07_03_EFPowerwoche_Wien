@@ -103,6 +103,10 @@
     <Compile Include="Migrations\201707051222316_AddStoredProcedure.Designer.cs">
       <DependentUpon>201707051222316_AddStoredProcedure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707051359013_AddWurscht.cs" />
+    <Compile Include="Migrations\201707051359013_AddWurscht.Designer.cs">
+      <DependentUpon>201707051359013_AddWurscht.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Blutprobe.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707051222316_AddStoredProcedure.resx">
       <DependentUpon>201707051222316_AddStoredProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707051359013_AddWurscht.resx">
+      <DependentUpon>201707051359013_AddWurscht.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

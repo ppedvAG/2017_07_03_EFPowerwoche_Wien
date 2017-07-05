@@ -1,4 +1,5 @@
 ﻿using HalloCodeFirst.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
 namespace HalloCodeFirst.Configurations
@@ -11,6 +12,10 @@ namespace HalloCodeFirst.Configurations
 
             //HasKey(b => new { b.Id, b.LFBIS });
             HasKey(b => b.Id);
+
+            Property(b => b.Wurscht)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed)
+                .IsMaxLength();
 
             Property(b => b.Id)
                 .HasColumnName("ProbenId");
