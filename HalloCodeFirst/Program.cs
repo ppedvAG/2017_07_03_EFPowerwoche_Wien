@@ -11,10 +11,42 @@ namespace HalloCodeFirst
     {
         static void Main(string[] args)
         {
-            PreLoading();
+            ChangeTracker();
 
             Console.WriteLine("Console Fertig.");
             Console.ReadKey();
+        }
+
+        private static void ChangeTracker()
+        {
+            using (var context = new BlutContext())
+            {
+                //var probe = context.Blutproben.First();
+                //probe.LFBIS = "8098653";
+                //context.SaveChanges();
+
+                //var newProbe = new Blutprobe { LFBIS = "1234567", Datum = DateTime.Now };
+                //context.Blutproben.Add(newProbe);
+                //context.SaveChanges();
+
+                //var proben = context.Blutproben.Where(p => p.LFBIS == "1234567");
+                //context.Blutproben.RemoveRange(proben);
+                //context.SaveChanges();
+
+                var proben = context.Blutproben.AsNoTracking().Take(20).ToList();
+
+                var p = proben.First();
+                p.LFBIS = "abcdefg";
+
+                var x = context.Untersuchungen.Where(u => u.ProbeId == p.Id).ToList();
+
+                context.Blutproben.Attach(p);
+                //context.Entry(p).State = EntityState.Modified;
+                context.Entry(p).Property(b => b.LFBIS).IsModified = true;
+
+                foreach(var entry in context.ChangeTracker.Entries<Blutprobe>())
+                    Console.WriteLine(entry.State);
+            }
         }
 
         public static void PreLoading()
@@ -63,7 +95,6 @@ namespace HalloCodeFirst
                 }
             }
         }
-
         private static void IQueryableExample()
         {
             using (var context = new BlutContext())
@@ -76,7 +107,6 @@ namespace HalloCodeFirst
                     Console.WriteLine($"{p.LFBIS} | {p.Datum.ToString("dd.MM.yyyy")}");
             }
         }
-
         private static void LetztePositiveUntersuchung(int probenId)
         {
             using (var context = new BlutContext())
