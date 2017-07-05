@@ -1,4 +1,5 @@
-﻿using Inheritance.Models;
+﻿using System;
+using Inheritance.Models;
 
 namespace Inheritance
 {
@@ -6,9 +7,24 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            TPT();
+            TPC();
         }
 
+        private static void TPC()
+        {
+            using (var context = new InheritanceContext())
+            {
+                // Nachteil: Muss Ids selber vergeben
+
+                var t = new Tisch { Id = 1, Material = "Holz", AnzahlFuesse = 7 };
+                var u = new Uhr { Id = 2, Material = "Plastik", Uhrzeit = DateTime.Now };
+
+                context.Produkte.Add(t);
+                context.Produkte.Add(u);
+
+                context.SaveChanges();
+            }
+        }
         private static void TPT()
         {
             using (var context = new InheritanceContext())

@@ -19,6 +19,12 @@ namespace Inheritance
         public DbSet<LKW> Lkws { get; set; }
         public DbSet<PKW> Pkws { get; set; }
 
+        // TPC - Table per Concrete Type
+        // Baseclass MUST be abstract!
+        public DbSet<Produkt> Produkte { get; set; }
+        public DbSet<Tisch> Tische { get; set; }
+        public DbSet<Uhr> Uhren { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // TPH
@@ -30,6 +36,12 @@ namespace Inheritance
             modelBuilder.Entity<Fahrzeug>().ToTable("Fahrzeuge");
             modelBuilder.Entity<LKW>().ToTable("LKWs");
             modelBuilder.Entity<PKW>().ToTable("PKWs");
+
+            // TPC
+            modelBuilder.Entity<Tisch>()
+                .Map(m => m.MapInheritedProperties().ToTable("Tische"));
+            modelBuilder.Entity<Uhr>()
+                .Map(m => m.MapInheritedProperties().ToTable("Uhren"));
         }
     }
 }
