@@ -10,6 +10,8 @@ namespace HalloCodeFirst
     {
         public BlutContext() : base("name=BlutConnectionString")
         { }
+        public BlutContext(string nameOrConnectionstring) : base(nameOrConnectionstring)
+        { }
 
         public DbSet<Blutprobe> Blutproben { get; set; }
         public DbSet<Material> Materialien { get; set; }

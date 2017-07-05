@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201707041258128_AddBlutprobenMaterialienRelationship.Designer.cs">
       <DependentUpon>201707041258128_AddBlutprobenMaterialienRelationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707050723362_SeedMaterialienTabelle.cs" />
+    <Compile Include="Migrations\201707050723362_SeedMaterialienTabelle.Designer.cs">
+      <DependentUpon>201707050723362_SeedMaterialienTabelle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Blutprobe.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707041258128_AddBlutprobenMaterialienRelationship.resx">
       <DependentUpon>201707041258128_AddBlutprobenMaterialienRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707050723362_SeedMaterialienTabelle.resx">
+      <DependentUpon>201707050723362_SeedMaterialienTabelle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
