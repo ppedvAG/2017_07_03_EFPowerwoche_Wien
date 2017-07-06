@@ -134,8 +134,11 @@ namespace HalloCodeFirst
         {
             using (var context = new BlutContext())
             {
+                // Alle Navigationsproperties müssen virtual sein!
+                // IN EF Core nicht unterstützt. (Stand 06.07.2017)
                 context.Configuration.LazyLoadingEnabled = true;        // Default
 
+                // N+1 Problem
                 var proben = context.Blutproben.Take(20).ToList();
 
                 foreach (var probe in proben)
